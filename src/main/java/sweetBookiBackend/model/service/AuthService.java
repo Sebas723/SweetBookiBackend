@@ -48,7 +48,7 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("Credenciales incorrectas"));
 
         if (!user.getPassword().equals(request.getPassword())) {
-            throw new RuntimeException("Credenciales incorrectas");
+            throw new RuntimeException("Las credenciales son incorrectas");
         }
 
         String token = jwtService.generateToken(user.getEmail());
